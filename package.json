@@ -13,7 +13,8 @@
         "bugswarm-cfg": "0.2.0",
         "bugswarm-prt": "0.2.1",
         "benchmark": "0.3.0",
-        "microtime": "0.2.0"
+        "microtime": "0.2.0",
+        "commander": "0.5.2"
     },
 
     "main": "index"
