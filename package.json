@@ -1,0 +1,20 @@
+{
+    "name": "bugswarm-benchmark",
+    "description": "Bugswarm benchmark tool",
+    "version": "0.1.0",
+    "homepage": "http://developer.bugswarm.net",
+    "author": "BugLabs Inc.",
+    "repository": "git://github.com/buglabs/bugswarm-benchmark",
+    "engines": {
+        "node": "0.6"
+    },
+
+    "dependencies": {
+        "bugswarm-cfg": "0.2.0",
+        "bugswarm-prt": "0.2.1",
+        "benchmark": "0.3.0",
+        "microtime": "0.2.0"
+    },
+
+    "main": "index"
+}
