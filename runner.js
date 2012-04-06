@@ -67,18 +67,32 @@ swarmConn.on('error', function(error) {
     //ignore application errors
 });
 
+var sent = false;
+swarmConn.on('presence', function(presence) {
+    console.log(presence);
+    if (presence.from.swarm == options.swarms && !sent) {
+        for (var i = 1; i <= msgs; i++) {
+            swarmConn.send(' msg number ' + i);
+        }
+        sent = true;
+    }
+});
+
 var msgs = program.messages;
 var conns = program.connections;
 
+var received = 0;
 swarmConn.on('message', function(message) {
     console.log(message);
+    received++;
+    if ((received * program.connections) == (msgs * program.connections)) {
+        swarmConn.disconnect();
+    }
+    console.log('received -> ' + received);
 });
 
 swarmConn.on('connect', function() {
-    console.log('connected!!');
-    for (var i = 0; i < msgs; i++) {
-        swarmConn.send(' msg number ' + i);
-    }
+    console.log('connected!');
 });
 
 
